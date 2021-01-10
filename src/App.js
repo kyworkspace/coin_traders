@@ -1,3 +1,4 @@
+// 사용하지 않음 CoinApp.jsx 사용함
 import logo from './logo.svg';
 import './App.css';
 
