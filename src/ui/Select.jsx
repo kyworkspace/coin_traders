@@ -26,7 +26,7 @@ class Select extends PureComponent {
   handleBlur() {
     this.setState({ focused: false });
   }
-  handleChange() {
+  handleChange(e) {
     const { name, onChange } = this.props;
     if (onChange) {
       onChange(name, e.target.value);
@@ -38,8 +38,8 @@ class Select extends PureComponent {
       this.ref.focus();
     }
   }
-  setRef() {
-    this.ref = this.ref;
+  setRef(ref) {
+    this.ref = ref;
   }
 
   render() {
@@ -71,7 +71,7 @@ class Select extends PureComponent {
             xsmall && styles.xsmallPadding,
             small && styles.smallPadding,
             large && styles.largePadding,
-            xlarge && style.xlargePadding,
+            xlarge && styles.xlargePadding,
             focused && styles.focus,
             errorMessage && styles.error
           )}
@@ -82,7 +82,7 @@ class Select extends PureComponent {
               xsmall && styles.xsmall,
               small && styles.small,
               large && styles.large,
-              xlarge && style.xlarge
+              xlarge && styles.xlarge
             )}
             disabled={disabled}
             id={`input_${name}`}
@@ -92,7 +92,7 @@ class Select extends PureComponent {
             onBlur={this.handleBlur}
             value={value}
           >
-            {React.Children.map(childre, (child) =>
+            {React.Children.map(children, (child) =>
               React.cloneElement(child, { disabled })
             )}
           </select>

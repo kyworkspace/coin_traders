@@ -14,7 +14,7 @@ import Select, { Option } from "../../ui/Select";
 class TransactionSearchFilter extends PureComponent {
   render() {
     return (
-      <Form onSubmit={(values) => console.log(value)}>
+      <Form onSubmit={(values) => console.log(values)}>
         <Form.Consumer>
           {({ onChange, values }) => (
             <InlineList spacingBetween={2} verticalAlign="bottom">

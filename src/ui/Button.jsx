@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import { withStyles, css } from "./withStyles";
 
-class Button extends Component {
+class Button extends PureComponent {
   render() {
     const {
       children,
@@ -18,7 +18,7 @@ class Button extends Component {
       onPress,
     } = this.props;
     return (
-      <Button
+      <button
         {...css(
           styles.default,
           xsmall && styles.xsmall,
@@ -34,7 +34,7 @@ class Button extends Component {
         type={type}
       >
         {children}
-      </Button>
+      </button>
     );
   }
 }
@@ -52,7 +52,7 @@ Button.propTypes = {
   onPress: PropTypes.func,
 };
 Button.defaultProps = {
-  onPress: () => {}, //기본 선언으로 오류 방지
+  onPress: () => {},
   xsmall: false,
   small: false,
   large: false,
@@ -80,30 +80,8 @@ export default withStyles(({ color, size, unit, depth, fontWeight }) => ({
       backgroundColor: color.grayLight,
     },
     ":focus": {
-      boxShadow: "0 0 0px 2px rgba(0,0,0,0.3)",
+      boxShadow: "0 0 0px 2px rgba(0, 0, 0, 0.3)",
     },
-  },
-  primary: {
-    borderColor: color.primary,
-    color: color.white,
-    backgroundColor: color.primary,
-    ":hover": {
-      backgroundColor: color.primaryDark,
-    },
-  },
-  disabled: {
-    borderColor: color.grayDark,
-    color: color.grayLight,
-    cursor: "default",
-    opacity: 0.5,
-    backgroundColor: color.gray,
-    ":hover": {
-      backgroundColor: color.gray,
-    },
-  },
-  secondary: {
-    borderColor: color.secondary,
-    color: color.secondary,
   },
   xlarge: {
     fontSize: size.xg,
@@ -120,5 +98,27 @@ export default withStyles(({ color, size, unit, depth, fontWeight }) => ({
   xsmall: {
     fontSize: size.xs,
     padding: unit,
+  },
+  primary: {
+    borderColor: color.primary,
+    color: color.white,
+    backgroundColor: color.primary,
+    ":hover": {
+      backgroundColor: color.primaryDark,
+    },
+  },
+  secondary: {
+    borderColor: color.secondary,
+    color: color.secondary,
+  },
+  disabled: {
+    borderColor: color.grayDark,
+    color: color.grayLight,
+    cursor: "default",
+    opacity: 0.5,
+    backgroundColor: color.gray,
+    ":hover": {
+      backgroundColor: color.gray,
+    },
   },
 }))(Button);
