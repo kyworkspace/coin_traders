@@ -7,9 +7,9 @@ class Heading extends PureComponent {
   render() {
     const { children, inverse, level, styles } = this.props;
 
-    const headingTag = headingTags[level - 1];
+    const HeadingTag = headingTags[level - 1];
     return (
-      <headingTag
+      <HeadingTag
         {...css(
           styles.default,
           styles[`level${level}`],
@@ -17,7 +17,7 @@ class Heading extends PureComponent {
         )}
       >
         {children}
-      </headingTag>
+      </HeadingTag>
     );
   }
 }

@@ -1,7 +1,7 @@
 //검색 및 결과 목록 화면 구성
 import React, { Component } from "react";
-import axios from "axios";
 
+import Api from "../../Api";
 import Heading from "../../ui/Heading";
 import Card from "../../ui/Card";
 
@@ -9,17 +9,15 @@ import TransactionSearchFilter from "./TransactionSearchFilter";
 import TransactionTable from "./TransactionTable";
 
 class TransactionList extends Component {
-  state = {
-    transactions: [],
-  };
   componentDidMount() {
-    axios
-      .get("/transactions")
-      .then((response) => this.setState({ transactions: response.data }));
+    console.log("트랜잭션 리스트");
+    Api.get("/transactions").then(({ data }) =>
+      this.props.setTransactionList(data)
+    );
   }
 
   render() {
-    const { transactions } = this.state;
+    const { transactions } = this.props;
     return (
       <div>
         {/* 검색부분 */}
