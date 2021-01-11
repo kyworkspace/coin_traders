@@ -5,7 +5,7 @@ import Api from "../../Api";
 import Heading from "../../ui/Heading";
 import Card from "../../ui/Card";
 
-import TransactionSearchFilter from "./TransactionSearchFilter";
+import TransactionSearchFilterContainer from "../../containers/main/TransactionSearchFilterContainer";
 import TransactionTable from "./TransactionTable";
 
 class TransactionList extends Component {
@@ -23,7 +23,7 @@ class TransactionList extends Component {
         {/* 검색부분 */}
         <Heading level={3}>거래현황</Heading>
         <Card vertical={4} horizontal={4}>
-          <TransactionSearchFilter />
+          <TransactionSearchFilterContainer />
         </Card>
         {/* 목록 부분 */}
         <Card>

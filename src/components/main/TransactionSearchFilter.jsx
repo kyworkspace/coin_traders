@@ -2,7 +2,7 @@
 //폼에서 제공받은 프로바이더 를 이용해서 onChange, value  콜백 받음
 
 import React, { PureComponent } from "react";
-
+import PropTypes from "prop-types";
 import InlineList from "../../ui/InlineList";
 import Button from "../../ui/Button";
 import Text from "../../ui/Text";
@@ -11,10 +11,23 @@ import Form from "../../ui/Form";
 
 import Select, { Option } from "../../ui/Select";
 
+import Api from "../../Api";
+
 class TransactionSearchFilter extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleSubmit(params) {
+    const { setTransactionList } = this.props;
+    Api.get("/transactions", { params }).then(({ data }) =>
+      setTransactionList(data)
+    );
+  }
+
   render() {
     return (
-      <Form onSubmit={(values) => console.log(values)}>
+      <Form onSubmit={this.handleSubmit}>
         <Form.Consumer>
           {({ onChange, values }) => (
             <InlineList spacingBetween={2} verticalAlign="bottom">
@@ -37,13 +50,13 @@ class TransactionSearchFilter extends PureComponent {
                 name="minAmount"
                 label="최소거래가"
                 onChange={onChange}
-                value={values["minAmount"]}
+                value={values["currentPrice_gte"]}
               />
               <Input
                 name="maxAmount"
                 label="최대거래가"
                 onChange={onChange}
-                value={values["maxAmount"]}
+                value={values["currentPrice_lte"]}
               />
               <Button type="submit" primary>
                 검색
@@ -60,6 +73,6 @@ TransactionSearchFilter.defaultProps = {
   onChange: () => ({}),
 };
 
-TransactionSearchFilter.propTypes = {};
+TransactionSearchFilter.propTypes = { setTransactionList: PropTypes.func };
 
 export default TransactionSearchFilter;

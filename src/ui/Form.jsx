@@ -25,7 +25,6 @@ class FormProvider extends React.PureComponent {
   }
 
   handleSubmit(e) {
-    console.log("FORM", "handleSubmit");
     const { values, error } = this.state;
     e.preventDefault(); //뭐임?
     if (Object.values(error).length === 0) {
@@ -34,15 +33,6 @@ class FormProvider extends React.PureComponent {
   }
 
   onChange(name, updatedValue) {
-    // this.setState(
-    //   ({ values }) => ({
-    //     values: {
-    //       ...values,
-    //       [name]: updatedValue,
-    //     },
-    //   }),
-    //   () => this.validate(this.state.values),
-    // );
     this.validate(this.state.values);
     this.setState(({ values }) => ({
       values: {
