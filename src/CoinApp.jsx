@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 
 import AppLayout from "./components/AppLayout";
 import MainPage from "./components/main/MainPage";
+import ModalProvider from "./ModalProvider";
 import configureStore from "./store/configureStore";
 
 class CoinApp extends PureComponent {
@@ -10,9 +11,11 @@ class CoinApp extends PureComponent {
   render() {
     return (
       <Provider store={this.store}>
-        <AppLayout>
-          <MainPage />
-        </AppLayout>
+        <ModalProvider>
+          <AppLayout>
+            <MainPage />
+          </AppLayout>
+        </ModalProvider>
       </Provider>
     );
   }
