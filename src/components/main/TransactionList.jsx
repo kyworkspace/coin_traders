@@ -1,5 +1,7 @@
 //검색 및 결과 목록 화면 구성
 import React, { Component } from "react";
+import axios from "axios";
+
 import Heading from "../../ui/Heading";
 import Card from "../../ui/Card";
 
@@ -8,16 +10,14 @@ import TransactionTable from "./TransactionTable";
 
 class TransactionList extends Component {
   state = {
-    transactions: [
-      {
-        id: "btx_01",
-        name: "비트코인(BTX)",
-        totalPrice: "123,000,000원",
-        currentPrice: "4,200,000원",
-        dateTime: "2020/01/20 08:23:22",
-      },
-    ],
+    transactions: [],
   };
+  componentDidMount() {
+    axios
+      .get("/transactions")
+      .then((response) => this.setState({ transactions: response.data }));
+  }
+
   render() {
     const { transactions } = this.state;
     return (

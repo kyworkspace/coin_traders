@@ -1,0 +1,36 @@
+{
+    "transactions" : [
+        {
+            "id" : 1,
+            "code" : "BTX",
+            "name" : "비트코인(BTX)",
+            "totalPrice" : 1239123000,
+            "currentPrice" : 1020000,
+            "dateTime" : "2020/01/11 08:23:22"
+        },
+        {
+            "id" : 2,
+            "code" : "RXP",
+            "name" : "리플(RXP)",
+            "totalPrice" : 1230000,
+            "currentPrice" : 20000,
+            "dateTime" :"2020/01/11 08:20:22"
+        },
+        {
+            "id" : 3,
+            "code" : "samsung",
+            "name" : "삼성전자(samsung)",
+            "totalPrice" : 53523000,
+            "currentPrice" : 91000,
+            "dateTime" :"2020/01/11 15:20:22"
+        },
+        {
+            "id" : 3,
+            "code" : "samsungWoo",
+            "name" : "삼성전자우(samsungWoo)",
+            "totalPrice" : 4283000,
+            "currentPrice" : 82000,
+            "dateTime" :"2020/01/11 15:20:22"
+        }
+    ]
+}
