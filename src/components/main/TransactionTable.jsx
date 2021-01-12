@@ -42,9 +42,9 @@ TransactionTable.propTypes = {
   transactions: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string,
-      id: PropTypes.string,
-      totalPrice: PropTypes.string,
-      currentPrice: PropTypes.string,
+      id: PropTypes.number,
+      totalPrice: PropTypes.number,
+      currentPrice: PropTypes.number,
       dateTime: PropTypes.string,
     })
   ),

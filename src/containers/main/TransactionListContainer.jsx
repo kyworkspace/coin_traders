@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import TransactionList from "../../components/main/TransactionList";
-import { setTransactionList } from "../../actions/transactionActions";
+//import { setTransactionList } from "../../actions/transactionActions";
+import { requestTransactionList } from "../../actions/transactionActions";
 
 const mapStateToProps = (state) => {
   console.log("트랜잭션 리스트 컨테이너");
@@ -11,7 +12,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDisPatchToProps = {
-  setTransactionList,
+  requestTransactionList,
 };
 
 export default connect(mapStateToProps, mapDisPatchToProps)(TransactionList);

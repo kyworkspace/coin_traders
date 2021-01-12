@@ -1,7 +1,7 @@
 //검색 및 결과 목록 화면 구성
 import React, { Component } from "react";
 
-import Api from "../../Api";
+//import Api from "../../Api";
 import Heading from "../../ui/Heading";
 import Card from "../../ui/Card";
 
@@ -11,9 +11,11 @@ import TransactionTable from "./TransactionTable";
 class TransactionList extends Component {
   componentDidMount() {
     console.log("트랜잭션 리스트");
-    Api.get("/transactions").then(({ data }) =>
-      this.props.setTransactionList(data)
-    );
+    // Api.get("/transactions").then(({ data }) =>
+    //   this.props.setTransactionList(data)
+    // );
+    this.props.requestTransactionList();
+    //함수형태로 가져오는 것이기 때문에 여기서 콜백
   }
 
   render() {

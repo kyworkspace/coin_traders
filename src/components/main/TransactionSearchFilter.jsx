@@ -11,7 +11,7 @@ import Form from "../../ui/Form";
 
 import Select, { Option } from "../../ui/Select";
 
-import Api from "../../Api";
+//import Api from "../../Api";
 
 class TransactionSearchFilter extends PureComponent {
   constructor(props) {
@@ -19,10 +19,14 @@ class TransactionSearchFilter extends PureComponent {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleSubmit(params) {
-    const { setTransactionList } = this.props;
-    Api.get("/transactions", { params }).then(({ data }) =>
-      setTransactionList(data)
-    );
+    const { requestTransactionList } = this.props;
+    // Api.get("/transactions", { params }).then(({ data }) =>
+    //   setTransactionList(data)
+    // );
+    const cleanedParams = Object.entries(params)
+      .filter(([key, value]) => value !== "")
+      .reduce((obj, [key, value]) => ({ ...obj, [key]: value }), {});
+    requestTransactionList(cleanedParams);
   }
 
   render() {
@@ -47,13 +51,13 @@ class TransactionSearchFilter extends PureComponent {
                 <Option label="삼성전자우" value="samsungWoo" />
               </Select>
               <Input
-                name="minAmount"
+                name="currentPrice_gte"
                 label="최소거래가"
                 onChange={onChange}
                 value={values["currentPrice_gte"]}
               />
               <Input
-                name="maxAmount"
+                name="currentPrice_lte"
                 label="최대거래가"
                 onChange={onChange}
                 value={values["currentPrice_lte"]}
@@ -73,6 +77,6 @@ TransactionSearchFilter.defaultProps = {
   onChange: () => ({}),
 };
 
-TransactionSearchFilter.propTypes = { setTransactionList: PropTypes.func };
+TransactionSearchFilter.propTypes = { requestTransactionList: PropTypes.func };
 
 export default TransactionSearchFilter;
