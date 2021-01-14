@@ -29,3 +29,6 @@ redux-thunk
 일반적으로 action은 type과 payload 형태로 되어 있지만, dispatch()와 스토어 데이터를 액션에 포함 시킬수 있도록 함
 
 {yarn add redux-thunk}
+
+## 서버 지연 처리와 오류 표시
+### 2021-01-14

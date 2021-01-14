@@ -37,7 +37,7 @@ export default withStyles(({ depth, unit, color }) => ({
     borderRadius: unit,
     backgroundColor: color.secondary,
     padding: unit * 2,
-    marginBottom: unot * 4,
+    marginBottom: unit * 4,
   },
   warning: {
     backgroundColor: color.error,

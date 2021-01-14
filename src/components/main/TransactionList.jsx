@@ -19,7 +19,7 @@ class TransactionList extends Component {
   }
 
   render() {
-    const { transactions } = this.props;
+    const { transactions,loading } = this.props;
     return (
       <div>
         {/* 검색부분 */}
@@ -29,7 +29,7 @@ class TransactionList extends Component {
         </Card>
         {/* 목록 부분 */}
         <Card>
-          <TransactionTable transactions={transactions} />
+          <TransactionTable transactions={transactions} isLoading={loading}/>
         </Card>
       </div>
     );

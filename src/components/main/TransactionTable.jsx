@@ -7,6 +7,16 @@ import TableRow from "../../ui/TableRow";
 import TableCell from "../../ui/TableCell";
 import TableHead from "../../ui/TableHead";
 import TableBody from "../../ui/TableBody";
+import withLoading from "../withLoading";
+import Spacing from "../../ui/Spacing";
+import Text from "../../ui/Text";
+
+const LoadingMessage = (
+  <Spacing vertical={4} horizontal ={2}>
+    <Text large>데이터를 불러들이고 있습니다.</Text>
+  </Spacing>
+)
+
 
 class TransactionTable extends Component {
   render() {
@@ -50,4 +60,4 @@ TransactionTable.propTypes = {
   ),
 };
 
-export default TransactionTable;
+export default withLoading(LoadingMessage)(TransactionTable);

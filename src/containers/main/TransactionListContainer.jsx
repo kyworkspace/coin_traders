@@ -5,10 +5,10 @@ import { requestTransactionList } from "../../actions/transactionActions";
 
 const mapStateToProps = (state) => {
   console.log("트랜잭션 리스트 컨테이너");
-  const { ids, entities } = state.transactions;
+  const { ids, entities,loading } = state.transactions;
   const transactions = ids.map((id) => entities[id]);
 
-  return { transactions };
+  return { transactions,loading };
 };
 
 const mapDisPatchToProps = {
