@@ -49,6 +49,72 @@
       "amount": "13",
       "name": "이더리움",
       "id": 7
+    },
+    {
+      "currentPrice": "4,216,000",
+      "amount": "123",
+      "name": "비트코인",
+      "id": 8
+    },
+    {
+      "currentPrice": "88,000",
+      "amount": "88",
+      "name": "삼성전자",
+      "id": 9
+    },
+    {
+      "currentPrice": "88,000",
+      "amount": "78",
+      "name": "삼성전자",
+      "id": 10
+    },
+    {
+      "currentPrice": "4,216,000",
+      "amount": "20",
+      "name": "비트코인",
+      "id": 11
+    },
+    {
+      "currentPrice": "4,216,000",
+      "amount": "2",
+      "name": "비트코인",
+      "id": 12
+    },
+    {
+      "currentPrice": "4,216,000",
+      "amount": "11",
+      "name": "비트코인",
+      "id": 13
+    },
+    {
+      "currentPrice": "75,000",
+      "amount": "123",
+      "name": "삼성전자우",
+      "id": 14
+    },
+    {
+      "currentPrice": "1111",
+      "amount": "2222",
+      "name": "이더리움",
+      "id": 15
+    },
+    {
+      "currentPrice": "86000",
+      "amount": "5",
+      "name": "삼성전자우",
+      "id": 16
+    },
+    {
+      "currentPrice": "96000",
+      "amount": "200",
+      "name": "삼성전자",
+      "id": 17
+    },
+    {
+      "currentPrice": "556254",
+      "amount": "55",
+      "name": "이더리움",
+      "id": 18
     }
   ]
 }

@@ -6,6 +6,9 @@ import notificationEffects from '../middlewares/notificationEffects'
 //import {SET_TRANSACTION_LIST} from '../actions/transactionActions';
 import transactionEffects from '../middlewares/transactionEffects';
 
+//redux-pack
+import {middleware as reduxPackMiddleware} from 'redux-pack';
+
 
 // const customMiddleware = store =>nextRunner => action =>{
 //     console.log('미들웨어1 액션객체',action); //nextRunner 이전 작업
@@ -53,6 +56,6 @@ import transactionEffects from '../middlewares/transactionEffects';
 export default initStates =>createStore(
     combineReducers(reducers),
     initStates,
-    composeWithDevTools(applyMiddleware(thunk,notificationEffects,transactionEffects))
+    composeWithDevTools(applyMiddleware(thunk,reduxPackMiddleware,notificationEffects,transactionEffects))
     ,
 )

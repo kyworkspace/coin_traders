@@ -10,7 +10,6 @@ import TransactionTable from "./TransactionTable";
 
 class TransactionList extends Component {
   componentDidMount() {
-    console.log("트랜잭션 리스트");
     // Api.get("/transactions").then(({ data }) =>
     //   this.props.setTransactionList(data)
     // );

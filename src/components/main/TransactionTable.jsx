@@ -54,7 +54,7 @@ TransactionTable.propTypes = {
       name: PropTypes.string,
       id: PropTypes.number,
       totalPrice: PropTypes.number,
-      currentPrice: PropTypes.number,
+      //currentPrice: PropTypes.number,
       dateTime: PropTypes.string,
     })
   ),
