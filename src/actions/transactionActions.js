@@ -4,7 +4,11 @@ import {showMessage} from "./notificationActions";
 export const LOADING_TRANSACTION_LIST = 'transaction/LOADING_TRANSACTION_LIST';
 export const SET_TRANSACTION_LIST = 'transaction/SET_TRANSACTION_LIST';
 export const SET_ERROR = 'transaction/SET_ERROR';
+export const TRADE_COMPLETE = 'transaction/TRADE_COMPLETE';
 
+export function tradeComplete(){
+    return {type : TRADE_COMPLETE};
+}
 
 export function setError(errorMessage){
     return {
@@ -21,6 +25,14 @@ export function setTransactionList(transactions) {
     }
 }
 
+export function createTransaction(data,onComplete){
+    return dispatch => Api.post('/transactions',data).then(({data})=>{
+        dispatch(tradeComplete());
+        onComplete()
+    },
+    error => dispatch(setError(error.response.data.errorMessage)));
+}
+
 export function requestTransactionList(params){
     return (dispatch)=> {
         dispatch(loading());
@@ -28,8 +40,8 @@ export function requestTransactionList(params){
         .then(
             ({data})=>dispatch(setTransactionList(data))
             ,error =>{
-                 //dispatch(setError(error.response.data.errorMessage));
-                 dispatch(showMessage(error.response.data.errorMessage,true))
+                 dispatch(setError(error.response.data.errorMessage));
+                //  dispatch(showMessage(error.response.data.errorMessage,true))
                 },
             );
         //axios는 에러가 발생할때 then의 두번째 인자에 해당하는 함수를 호출함
