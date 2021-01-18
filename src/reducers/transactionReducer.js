@@ -5,15 +5,17 @@ import {FETCH_TRANSACTION_LIST,CREATE_TRANSACTION} from '../actions/transactionP
 
 const initState = {
     ids : [],
-    entities :[],
+    entities :{},
     hasError : false,
+    loading : false,
+    pagination : {},
 };
 
 
 
 export default (state=initState,action)=>{
     
-    const {type , payload} = action;
+    const {type , payload,meta} = action;
     switch(type){
         case SET_TRANSACTION_LIST : {
             console.log("트랜잭션 리듀서 리스트 호출")
@@ -55,6 +57,7 @@ export default (state=initState,action)=>{
                 //case SET_TRANSACTION_LIST와 동일
                 success : prevState =>{
                     const { data } = payload;
+                    const {pageNumber,pageSize} = meta || {};
                     if(type === FETCH_TRANSACTION_LIST){
                         const ids = data.map(entity=> entity['id']);
                         const entities = data.reduce(
@@ -71,6 +74,10 @@ export default (state=initState,action)=>{
                             entities,
                             loading : false,
                             hasError : false,
+                            pagination :{
+                                number : pageNumber,
+                                size : pageSize
+                            }
                         }
                     }else{
                         const id = data['id'];
