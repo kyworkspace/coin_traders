@@ -43,6 +43,7 @@ const createData = (index) =>{
 
 module.exports = function(){
     return {
+        users :[],
         transactions : Array(100).fill('').map((_,index)=>createData(index)),
         //100 크기의 배열을 ''로 초기화 하고 map의 함수를 통해 배열을 값을 채움
     }
