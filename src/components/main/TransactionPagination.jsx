@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import InlineList from '../../ui/InlineList';
+import Button from '../../ui/Button';
 
 class TransactionPagination extends PureComponent {
     constructor(props){
@@ -9,17 +10,17 @@ class TransactionPagination extends PureComponent {
         this.handlePrevPress = this.handlePrevPress.bind(this);
     }
     handleNextPress(){
-        const { requestTransactionList , pageNumber} = this.props;
-        requestTransactionList(null,pageNumber+1);
+        const { requestTransactionList , pageNumber, searchParams} = this.props;
+        requestTransactionList(searchParams,pageNumber+1);
     }
     handlePrevPress(){
-        const {requestTransactionList, pageNumber} = this.props;
-        requestTransactionList(null,pageNumber-1)
+        const {requestTransactionList, pageNumber,searchParams} = this.props;
+        requestTransactionList(searchParams,pageNumber-1)
     }
 
 
     render() {
-        const { loading, pageNumber} = this.props;
+        const { loading, pageNumber,hasNext} = this.props;
         const prevDisabled = loading || pageNumber <=1;
         const nextDiasbled = loading || !hasNext;
         return (
@@ -28,7 +29,7 @@ class TransactionPagination extends PureComponent {
                     이전
                 </Button>
                 <Button secondary disabled = {nextDiasbled} onPress={this.handleNextPress}>
-                    이전
+                    다음
                 </Button>
             </InlineList>
         );

@@ -51,11 +51,11 @@ class TransactionTable extends Component {
 TransactionTable.propTypes = {
   transactions: PropTypes.arrayOf(
     PropTypes.shape({
-      name: PropTypes.string,
-      id: PropTypes.number,
-      totalPrice: PropTypes.number,
+      // name: PropTypes.string,
+      // id: PropTypes.number,
+      // totalPrice: PropTypes.number,
       //currentPrice: PropTypes.number,
-      dateTime: PropTypes.string,
+      // dateTime: PropTypes.string,
     })
   ),
 };

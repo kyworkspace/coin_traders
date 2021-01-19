@@ -7,6 +7,7 @@ import Card from "../../ui/Card";
 
 import TransactionSearchFilterContainer from "../../containers/main/TransactionSearchFilterContainer";
 import TransactionTable from "./TransactionTable";
+import TransactionPaginationContatiner from '../../containers/main/TransactionPaginationContainer';
 
 class TransactionList extends Component {
   componentDidMount() {
@@ -30,6 +31,7 @@ class TransactionList extends Component {
         <Card>
           <TransactionTable transactions={transactions} isLoading={loading}/>
         </Card>
+        <TransactionPaginationContatiner/>
       </div>
     );
   }
