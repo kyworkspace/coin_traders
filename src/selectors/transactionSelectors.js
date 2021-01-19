@@ -20,6 +20,7 @@ export const transactionListSelector = createSelector(
         return ids.map(id=>entities[id]);
     }
 )
+//반복된 구조를 반환하는 경우 reselector에 저장시켜둬서 언제든 빠르게 찾아낼수 있다.
 
 export const loadingStateSelector = state => transactionsSelector(state).loadingState;
 //거래 정보의 전체 로딩 정보 객체를 추출하는 셀렉터
