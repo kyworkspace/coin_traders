@@ -22,7 +22,6 @@ export default (state = initState,action) => {
         }
         case HIDE_NOTIFICATION : 
         {
-            console.log("HIDE NOTIFICATION")
             return {
                 ...state,
                 message : '',

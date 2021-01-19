@@ -14,10 +14,13 @@ export default store => nextRunner=> action=>{
 
         if(success&&meta[KEY.LIFECYCLE]===LIFECYCLE.SUCCESS){//성공
             store.dispatch(showMessage(success))
+            debouceRunner(() =>store.dispatch(hideMessage()));
         }
         else if(error && meta[KEY.LIFECYCLE] === LIFECYCLE.FAILURE){ //실패
             store.dispatch(showMessage(error,true));
+            debouceRunner(()=>store.dispatch(hideMessage()));
         }
+        
     }
 
     
