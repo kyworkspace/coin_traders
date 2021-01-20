@@ -4,6 +4,9 @@ import React, { PureComponent } from "react";
 import { withStyles, css, withStylesPropTypes } from "../ui/withStyles";
 import Heading from "../ui/Heading";
 import Text from "../ui/Text";
+import {REGISTER_USER_MODAL} from '../constants/modals';
+import {Consumer as Modal} from "../ui/Modal/context";
+import Button from "../ui/Button";
 
 export const HEIGHT = 64;
 
@@ -19,6 +22,13 @@ class AppNav extends PureComponent {
           <Text inverse bold large>
             회원가입
           </Text>
+          <Modal>
+            {({openModal})=>(
+              <Button inverse bold large onPress={()=>openModal(REGISTER_USER_MODAL)}>
+                회원가입
+              </Button>
+            )}
+          </Modal>
         </div>
       </div>
     );

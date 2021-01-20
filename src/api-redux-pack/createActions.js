@@ -22,7 +22,7 @@ export default (resourceName, key = 'id') =>({
     }),
     create : (data,params={},meta={})=>({
         type : CREATE,
-        promise : Api.get(resourceName,data,{params}),
+        promise : Api.post(resourceName,data,{params}),
         meta : {
             ...meta,
             key,
