@@ -37,3 +37,24 @@ redux-thunk
 ## 2021-01-20
 
 사용자 회원가입 로직 추가
+
+## 2021-01-21
+# Route 컴포넌트 정리  
+component : 라우터 공급자로부터 전달받은 모든 값을 프로퍼티로 전달하여 출력.  
+render : render 프로퍼티에는 render 함수를 구성하므로 match,location,history 프로퍼티가 자동으로 전달되지 않음. 특정 프로퍼티를 전달하고 싶다면
+<Route path="*" render={props=><MyComponent url={props.match.url}/>}/>}/> 와 같이 입력 해야함. &&와 같은 조건식도 사용가능
+Children : render 프로퍼티를 자식 프로퍼티 형태로 출력. 
+<Route>{()=><MyComponent/>}</Route> ----> <Route render={()=><MyComponent/>}/> 와 동일하게 동작함
+  
+# Route 컴포넌트가 출력할 컴포넌트에는 아래의 프로퍼티를 전달함
+match : 현재 루트에 정의된 경로와 일치된 주소 정보  
+location : 브라우저 라우터의 경우 window.location의 정보를 전달  
+history : 페이지 이동 기록 정보. 페이지 앞뒤 이동 할 수 있음
+
+# Link 컴포넌트
+Link 컴포넌트는 주소와 리액트 라우터의 정보만 변경 시키므로 새로고침 현상을 방지함
+# Switch  
+조건에 맞는 컴포넌트만 나올수 있도록 함
+
+# Redirect 컴포넌트
+특정조건에서 바로 페이지 이동을 해야하는 경우

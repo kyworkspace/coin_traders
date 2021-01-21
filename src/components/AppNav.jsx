@@ -19,9 +19,6 @@ class AppNav extends PureComponent {
           <Heading level={3} inverse>
             코인 거래소
           </Heading>
-          <Text inverse bold large>
-            회원가입
-          </Text>
           <Modal>
             {({openModal})=>(
               <Button inverse bold large onPress={()=>openModal(REGISTER_USER_MODAL)}>
