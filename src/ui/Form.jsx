@@ -59,7 +59,7 @@ class FormProvider extends React.PureComponent {
     return (
       <Provider
         value={{ errors, values, onChange: this.onChange, reset: this.reset }}
-      >
+>
         <form onSubmit={this.handleSubmit}>{this.props.children}</form>
       </Provider>
     );

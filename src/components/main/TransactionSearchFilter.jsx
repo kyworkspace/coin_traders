@@ -10,6 +10,7 @@ import Input from "../../ui/Input";
 import Form from "../../ui/Form";
 
 import Select, { Option } from "../../ui/Select";
+import {withRouter} from 'react-router-dom';
 
 //import Api from "../../Api";
 
@@ -19,20 +20,26 @@ class TransactionSearchFilter extends PureComponent {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleSubmit(params) {
-    const { requestTransactionList,setFilter } = this.props;
+    //const { requestTransactionList,setFilter } = this.props; //검색 주소값을 넘겨주기 위해 변경
+    const{setFilter,history} = this.props
     // Api.get("/transactions", { params }).then(({ data }) =>
     //   setTransactionList(data)
     // );
     const cleanedParams = Object.entries(params)
       .filter(([key, value]) => value !== "")
       .reduce((obj, [key, value]) => ({ ...obj, [key]: value }), {});
-    requestTransactionList(cleanedParams);
-    setFilter(cleanedParams);
+    // requestTransactionList(cleanedParams);
+    // setFilter(cleanedParams);
+    const queryString = Object.entries(cleanedParams)
+    .map(([key,value])=>`${key}=${value}`) //['code=BTX', 'price=100']
+    .join('&'); //'code=BTX&price=100'
+    history.push(`/?${queryString}`);
   }
 
   render() {
+    const {initValues} = this.props;
     return (
-      <Form onSubmit={this.handleSubmit}>
+      <Form onSubmit={this.handleSubmit} initValues={initValues}>
         <Form.Consumer>
           {({ onChange, values }) => (
             <InlineList spacingBetween={2} verticalAlign="bottom">
@@ -81,4 +88,4 @@ TransactionSearchFilter.defaultProps = {
 TransactionSearchFilter.propTypes = { requestTransactionList: PropTypes.func,
 setFilter : PropTypes.func };
 
-export default TransactionSearchFilter;
+export default withRouter(TransactionSearchFilter) ;

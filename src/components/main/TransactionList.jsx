@@ -14,8 +14,9 @@ class TransactionList extends Component {
     // Api.get("/transactions").then(({ data }) =>
     //   this.props.setTransactionList(data)
     // );
-    this.props.requestTransactionList();
+    //this.props.requestTransactionList();
     //함수형태로 가져오는 것이기 때문에 여기서 콜백
+    // routerEffect 미들웨어에서 자동으로 거래목록 요청하기 때문에 필요없음
   }
 
   render() {

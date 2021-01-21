@@ -4,8 +4,9 @@ import createActions from '../api-redux-pack/createActions';
 
 export const FETCH_TRANSACTION_LIST = 'transaction/FETCH_TRANSACTION_LIST';
 export const CREATE_TRANSACTION = 'transaction/CREATE_TRANSACTION';
-
 const { collection, create, reset } = createActions('transactions');
+
+export const resetTransactionList = reset;
 
 const PAGE_SIZE = 10;
 
@@ -29,7 +30,7 @@ export function requestTransactionList(params,_page=1){
         pageNumber : _page,
         pageSize : PAGE_SIZE,
         notification : {
-            success : "거래 목록을 최신정보로 업데이트 하였습니다.",
+            success : "거래 목록을 최신정보로 업데이트 하였습니다. TransactionPackAction",
                 error : '거래목록을 갱신하는 중에 문제가 발생하였습니다.'
         }
     }

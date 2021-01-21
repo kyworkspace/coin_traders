@@ -5,7 +5,8 @@ import thunk from 'redux-thunk';
 import notificationEffects from '../middlewares/notificationEffects'
 //import {SET_TRANSACTION_LIST} from '../actions/transactionActions';
 import transactionEffects from '../middlewares/transactionEffects';
-
+import searchFilterEffects from '../middlewares/searchFilterEffects';
+import routerEffecs from '../middlewares/routerEffects'
 //redux-pack
 import {middleware as reduxPackMiddleware} from 'redux-pack';
 
@@ -56,6 +57,6 @@ import {middleware as reduxPackMiddleware} from 'redux-pack';
 export default initStates =>createStore(
     combineReducers(reducers),
     initStates,
-    composeWithDevTools(applyMiddleware(thunk,reduxPackMiddleware,notificationEffects,transactionEffects))
+    composeWithDevTools(applyMiddleware(thunk,reduxPackMiddleware,notificationEffects,transactionEffects,searchFilterEffects,routerEffecs))
     ,
 )
