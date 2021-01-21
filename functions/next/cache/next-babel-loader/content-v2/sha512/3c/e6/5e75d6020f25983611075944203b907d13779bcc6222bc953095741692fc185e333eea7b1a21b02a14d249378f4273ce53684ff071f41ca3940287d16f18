@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { jsx as _jsx } from \"react/jsx-runtime\";\nimport React, { PureComponent } from 'react';\nimport MainPage from '../src/components/main/MainPage';\n\nclass IndexDocument extends PureComponent {\n  render() {\n    return /*#__PURE__*/_jsx(MainPage, {});\n  }\n\n}\n\nexport default IndexDocument;","map":null,"metadata":{},"sourceType":"module"}

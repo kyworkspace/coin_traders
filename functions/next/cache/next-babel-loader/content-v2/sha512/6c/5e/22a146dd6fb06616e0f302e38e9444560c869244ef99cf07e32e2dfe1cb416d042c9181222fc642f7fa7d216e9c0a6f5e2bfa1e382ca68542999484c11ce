@@ -1,0 +1,1 @@
+{"ast":null,"code":"export function debounce(func, delay) {\n  let inDebounce;\n  return function (...args) {\n    if (inDebounce) {\n      clearTimeout(inDebounce);\n    }\n\n    inDebounce = setTimeout(() => func(...args), delay);\n  };\n}","map":null,"metadata":{},"sourceType":"module"}

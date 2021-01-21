@@ -1,0 +1,1 @@
+{"ast":null,"code":"import createActions from '../api-redux-pack/createActions';\nconst {\n  create\n} = createActions('users');\nexport function createUser(data, onComplete) {\n  return create(data, {}, {\n    notification: {\n      success: '회원가입 , 성공적'\n    },\n    onSuccess: onComplete\n  });\n}","map":null,"metadata":{},"sourceType":"module"}

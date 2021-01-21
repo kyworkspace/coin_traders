@@ -59,3 +59,7 @@ Link 컴포넌트는 주소와 리액트 라우터의 정보만 변경 시키므
 ## 2021-01-021
 ### 파이어 베이스 적용해보기
 URL : https://kyworkspace.web.app/
+.....
+Your project kyworkspace must be on the Blaze (pay-as-you-go) plan to complete this command. Required API cloudbuild.googleapis.com can't be enabled until the upgrade is complete.
+..... ㅠㅠ JSON server가 안되네연...
+

@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const SET_FILTER = 'searchFilter/SET_FILTER';\nexport function setFilter(params) {\n  return {\n    type: SET_FILTER,\n    payload: {\n      params\n    }\n  };\n}","map":null,"metadata":{},"sourceType":"module"}

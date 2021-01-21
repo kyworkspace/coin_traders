@@ -1,0 +1,1 @@
+{"ast":null,"code":"import createSelectors from '../api-redux-pack/createSelectors';\n\nconst _createSelectors = createSelectors('users'),\n      userCreateLoadingStateSelector = _createSelectors.createLoadingStateSelector;\n\nexport { userCreateLoadingStateSelector };","map":null,"metadata":{},"sourceType":"module"}

@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const SET_LOCATION = 'router/SET_LOCATION';\nexport function setLocation(location) {\n  return {\n    type: SET_LOCATION,\n    payload: {\n      location\n    }\n  };\n}","map":null,"metadata":{},"sourceType":"module"}
