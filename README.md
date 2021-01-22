@@ -3,7 +3,7 @@
 ## 구매화면
 ![pic2](https://user-images.githubusercontent.com/45280952/105436899-63e04980-5ca3-11eb-8854-da231f1792fd.png)
 ## 검색화면
-![pic3](https://user-images.githubusercontent.com/45280952/105436944-765a8300-5ca3-11eb-99eb-9192b2876d27.png)
+![pic4](https://user-images.githubusercontent.com/45280952/105437166-e5d07280-5ca3-11eb-842e-f0da2063e0f4.png)
 middleware에서 필터 정보를 캐치해서 url에도 적용될수 있도록 
 
 
