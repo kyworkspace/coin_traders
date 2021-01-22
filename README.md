@@ -1,3 +1,12 @@
+## 기본화면
+![pic1](https://user-images.githubusercontent.com/45280952/105436821-401d0380-5ca3-11eb-8a2e-07eac5f897fb.png)
+## 구매화면
+![pic2](https://user-images.githubusercontent.com/45280952/105436899-63e04980-5ca3-11eb-8854-da231f1792fd.png)
+## 검색화면
+![pic3](https://user-images.githubusercontent.com/45280952/105436944-765a8300-5ca3-11eb-99eb-9192b2876d27.png)
+middleware에서 필터 정보를 캐치해서 url에도 적용될수 있도록 
+
+
 ## 가상 코인 거래소 2021-01-07
 
 First init
